@@ -11,9 +11,9 @@ public class BspFlashCardController {
     @GetMapping(path = "/flashcard")
     public ResponseEntity<LernSet> getLernSet(){
         final LernSet hauptstadt = new LernSet();
-        hauptstadt.add(new FlashCard("Deutschland" , "Berlin"));
-        hauptstadt.add(new FlashCard("Frankreich" , "Paris"));
-        hauptstadt.add(new FlashCard("Korea" , "Seoul"));
+        hauptstadt.addFlashcard(new FlashCard("Deutschland" , "Berlin"));
+        hauptstadt.addFlashcard(new FlashCard("Frankreich" , "Paris"));
+        hauptstadt.addFlashcard(new FlashCard("Korea" , "Seoul"));
         return ResponseEntity.ok(hauptstadt);
     }
 }

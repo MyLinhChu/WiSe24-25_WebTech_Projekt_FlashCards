@@ -11,8 +11,12 @@ public class LernSet {
     public LernSet() {
     }
 
-    public void add(FlashCard flashCard) {
+    public void addFlashcard(FlashCard flashCard) {
         lernSet.add(flashCard);
+    }
+
+    public void deleteFlashcard(){
+
     }
 
     public List<FlashCard> getLernSet() {
