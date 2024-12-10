@@ -34,7 +34,7 @@ Die Website bietet eine Vielzahl von Funktionen, die es den Benutzern ermöglich
 - **Lernmodus mit Wiederholung**: Fragen, die falsch beantwortet wurden, werden häufiger wiederholt, um den Fokus auf schwächere Bereiche zu legen.
 - **Abfrage-Modus**: Ein Modus, bei dem alle Karten einmal durchlaufen werden, ohne Wiederholungen.
 
-### 4. **Statistiken**
+### 4. **Statistiken** -Wir müssen diese Teil nicht machen
 
 - **Lernfortschrittsanzeige**: Der Benutzer kann seine Lernstatistiken einsehen, um nachzuvollziehen, wie viele Fragen korrekt oder falsch beantwortet wurden.
 - **Erfolgsquote pro Stapel**: Die Website zeigt für jeden Stapel an, wie oft Fragen richtig beantwortet wurden, um gezielt zu üben.
