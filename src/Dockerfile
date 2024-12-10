@@ -10,5 +10,5 @@ RUN gradle build --no-daemon
 
 ## Package Stage ##
 FROM eclipse-temurin:21-jdk-jammy
-COPY --from=build /home/gradle/src/build/libs/<EUER PROJEKTNAME>-0.0.1-SNAPSHOT.jar app.jar
+COPY --from=build /home/gradle/src/build/libs/WiSe24-25_WebTech_Projekt_FlashCards-0.0.1-SNAPSHOT.jar app.jar
 ENTRYPOINT ["java","-jar","/app.jar"]
