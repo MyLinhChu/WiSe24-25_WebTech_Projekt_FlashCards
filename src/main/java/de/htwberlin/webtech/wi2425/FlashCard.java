@@ -1,7 +1,10 @@
 package de.htwberlin.webtech.wi2425;
 
-import java.util.HashMap;
+import lombok.Getter;
+import lombok.Setter;
 
+@Setter
+@Getter
 public class FlashCard {
     private String frage;
     private String antwort;
@@ -12,19 +15,4 @@ public class FlashCard {
         this.antwort = antwort;
     }
 
-    public String getFrage() {
-        return frage;
-    }
-
-    public void setFrage(String frage) {
-        this.frage = frage;
-    }
-
-    public String getAntwort() {
-        return antwort;
-    }
-
-    public void setAntwort(String antwort) {
-        this.antwort = antwort;
-    }
 }

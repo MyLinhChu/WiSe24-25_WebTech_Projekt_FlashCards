@@ -9,9 +9,13 @@ import org.springframework.web.bind.annotation.PostMapping;
 @Controller
 public class BspFlashCardController {
 
+
+
+
+
     @GetMapping(path = "/flashcard")
     public ResponseEntity<LernSet> getLernSet(){
-        final LernSet hauptstadt = new LernSet();
+        final LernSet hauptstadt = new LernSet("Haupstadt");
         hauptstadt.addFlashcard(new FlashCard("Deutschland" , "Berlin"));
         hauptstadt.addFlashcard(new FlashCard("Frankreich" , "Paris"));
         hauptstadt.addFlashcard(new FlashCard("Korea" , "Seoul"));
