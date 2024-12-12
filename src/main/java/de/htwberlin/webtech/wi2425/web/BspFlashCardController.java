@@ -6,6 +6,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Controller
 public class BspFlashCardController {
 
@@ -15,10 +18,11 @@ public class BspFlashCardController {
 
     @GetMapping(path = "/flashcard")
     public ResponseEntity<LernSet> getLernSet(){
-        final LernSet hauptstadt = new LernSet("Haupstadt");
-        hauptstadt.addFlashcard(new FlashCard("Deutschland" , "Berlin"));
-        hauptstadt.addFlashcard(new FlashCard("Frankreich" , "Paris"));
-        hauptstadt.addFlashcard(new FlashCard("Korea" , "Seoul"));
+        List<FlashCard> hauptstadtSammlung = new ArrayList<>();
+        hauptstadtSammlung.add(new FlashCard("Deutschland" , "Berlin"));
+        hauptstadtSammlung.add(new FlashCard("Frankreich" , "Paris"));
+        hauptstadtSammlung.add(new FlashCard("Korea" , "Seoul"));
+        final LernSet hauptstadt = new LernSet("Hauptstadt", hauptstadtSammlung);
         return ResponseEntity.ok(hauptstadt);
     }
 }

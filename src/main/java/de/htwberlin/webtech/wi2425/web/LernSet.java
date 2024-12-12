@@ -4,6 +4,7 @@ import de.htwberlin.webtech.wi2425.FlashCard;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Setter
@@ -11,15 +12,11 @@ import java.util.List;
 public class LernSet {
 
     private String name;
-    private List<FlashCard> lernSet;
+    private List<FlashCard> sammlung;
 
-    public LernSet(String name) {
+    public LernSet(String name, List<FlashCard> sammlung) {
         this.name = name;
-    }
-
-
-    public void addFlashcard(FlashCard flashCard) {
-        lernSet.add(flashCard);
+        this.sammlung = sammlung;
     }
 
 }
