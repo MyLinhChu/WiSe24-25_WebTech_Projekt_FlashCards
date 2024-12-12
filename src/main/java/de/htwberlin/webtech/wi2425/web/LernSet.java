@@ -4,7 +4,6 @@ import de.htwberlin.webtech.wi2425.FlashCard;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @Setter
