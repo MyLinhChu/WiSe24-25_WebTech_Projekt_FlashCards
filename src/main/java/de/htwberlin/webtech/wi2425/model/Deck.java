@@ -23,9 +23,4 @@ public class Deck {
 
     @OneToMany(mappedBy = "deck", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<FlashCard> cards = new ArrayList<>();
-    //private List<String> tags;
-    //private String createdAt;
-    //private String updatedAt;
-
-
 }

@@ -9,6 +9,9 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 import java.util.Optional;
 
 @RestController
@@ -83,4 +86,17 @@ public class DeckController {
         boolean deleted = deckService.deleteFlashCardFromDeck(deckId, flashCardId);
         return deleted ? ResponseEntity.noContent().build() : ResponseEntity.notFound().build();
     }
+
+    @GetMapping("/{deckId}/learn")
+    public ResponseEntity<List<FlashCard>> getFlashCardsForLearning(@PathVariable int deckId) {
+        Optional<Deck> deckOptional = deckService.getDeck(deckId);
+        if (deckOptional.isPresent()) {
+            Deck deck = deckOptional.get();
+            List<FlashCard> shuffledCards = new ArrayList<>(deck.getCards());
+            Collections.shuffle(shuffledCards); // Zufällige Reihenfolge
+            return ResponseEntity.ok(shuffledCards);
+        }
+        return ResponseEntity.notFound().build();
+    }
+
 }
