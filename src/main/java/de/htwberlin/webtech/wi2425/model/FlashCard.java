@@ -1,5 +1,5 @@
 package de.htwberlin.webtech.wi2425.model;
-
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -20,6 +20,7 @@ public class FlashCard {
 
     @ManyToOne
     @JoinColumn(name = "deck_id")
+    @JsonBackReference // Prevent recursive serialization
     private Deck deck;
 
 }

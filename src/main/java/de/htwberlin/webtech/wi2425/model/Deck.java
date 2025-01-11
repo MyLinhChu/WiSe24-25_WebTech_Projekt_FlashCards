@@ -1,5 +1,5 @@
 package de.htwberlin.webtech.wi2425.model;
-
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -22,5 +22,6 @@ public class Deck {
     private String description;
 
     @OneToMany(mappedBy = "deck", cascade = CascadeType.ALL, orphanRemoval = true)
+    @JsonManagedReference
     private List<FlashCard> cards = new ArrayList<>();
 }

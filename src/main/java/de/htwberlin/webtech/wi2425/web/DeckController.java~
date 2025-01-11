@@ -74,28 +74,17 @@ public class DeckController {
     public ResponseEntity<Deck> updateDeck(
             @PathVariable int deckId,
             @RequestBody Deck updatedDeck) {
-        Optional<Deck> existingDeckOpt = deckRepository.findById(deckId);
-        if (existingDeckOpt.isPresent()) {
-            Deck existingDeck = existingDeckOpt.get();
-            // Update deck fields
-            existingDeck.setName(updatedDeck.getName());
-            existingDeck.setDescription(updatedDeck.getDescription());
-
-            // Handle cards
-            // Clear the existing cards and re-add them
-            existingDeck.getCards().clear();
-            for (FlashCard card : updatedDeck.getCards()) {
-                card.setDeck(existingDeck); // Set the relationship
-                existingDeck.getCards().add(card);
-            }
-
-            // Save updated deck
-            Deck savedDeck = deckRepository.save(existingDeck);
-            return ResponseEntity.ok(savedDeck);
+        Optional<Deck> existingDeck = deckRepository.findById(deckId);
+        if (existingDeck.isPresent()) {
+            Deck deck = existingDeck.get();
+            deck.setName(updatedDeck.getName());
+            deck.setDescription(updatedDeck.getDescription());
+            deck.setCards(updatedDeck.getCards());
+            deckRepository.save(deck);
+            return ResponseEntity.ok(deck);
         }
         return ResponseEntity.notFound().build();
     }
-
 
 
     @PutMapping("/{deckId}/flashcards/{flashCardId}")
