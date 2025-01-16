@@ -1,10 +1,9 @@
-package de.htwberlin.webtech.wi2425.web;
+package de.htwberlin.webtech.wi2425.service;
 
 
 import de.htwberlin.webtech.wi2425.model.Deck;
 import de.htwberlin.webtech.wi2425.model.FlashCard;
 import de.htwberlin.webtech.wi2425.persistence.DeckRepository;
-import de.htwberlin.webtech.wi2425.service.DeckService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -23,7 +22,7 @@ import static org.mockito.Mockito.*;
 @SpringBootTest
 @ExtendWith(SpringExtension.class)
 
-    public class DeckServieceTest {
+    public class DeckServiceTest {
         @Autowired
         private DeckService service;
 
