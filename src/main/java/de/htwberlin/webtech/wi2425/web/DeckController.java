@@ -121,10 +121,12 @@ public class DeckController {
         if (deckOptional.isPresent()) {
             Deck deck = deckOptional.get();
             List<FlashCard> shuffledCards = new ArrayList<>(deck.getCards());
-            Collections.shuffle(shuffledCards); // Zufällige Reihenfolge
+            Collections.shuffle(shuffledCards);
             return ResponseEntity.ok(shuffledCards);
         }
-        return ResponseEntity.notFound().build();
+        return ResponseEntity.notFound().build(); // Ensure this doesn't return an HTML error page
     }
+
+
 
 }
